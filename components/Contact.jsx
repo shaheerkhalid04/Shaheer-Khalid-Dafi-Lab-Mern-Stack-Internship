@@ -58,10 +58,6 @@ export default function Contact() {
                 </a>
               </li>
               <li className="flex items-center gap-3 font-mono text-[13px]">
-                <span className="text-green">phone</span>
-                <span className="text-muted2">{profile.phone}</span>
-              </li>
-              <li className="flex items-center gap-3 font-mono text-[13px]">
                 <span className="text-green">github</span>
                 <a href={profile.github} target="_blank" rel="noreferrer" className="text-muted2 hover:text-green">
                   /shaheerkhalid04

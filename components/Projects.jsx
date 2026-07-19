@@ -13,10 +13,6 @@ function Tag({ children }) {
   );
 }
 
-function isTodo(s) {
-  return typeof s === "string" && s.trim().startsWith("TODO");
-}
-
 function ProjectCard({ project, onOpen, index }) {
   return (
     <Reveal delay={index * 0.06}>
@@ -128,27 +124,11 @@ function Modal({ project, onClose }) {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <p className="font-mono text-[12px] text-muted">// role</p>
-                <p
-                  className={`mt-2 text-[14px] leading-relaxed ${
-                    isTodo(project.role) ? "text-muted italic" : "text-muted2"
-                  }`}
-                >
-                  {project.role}
-                </p>
-              </div>
-              <div>
-                <p className="font-mono text-[12px] text-muted">// hardest part</p>
-                <p
-                  className={`mt-2 text-[14px] leading-relaxed ${
-                    isTodo(project.decision) ? "text-muted italic" : "text-muted2"
-                  }`}
-                >
-                  {project.decision}
-                </p>
-              </div>
+            <div>
+              <p className="font-mono text-[12px] text-muted">// role</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-muted2">
+                {project.role}
+              </p>
             </div>
 
             <div>
@@ -162,19 +142,16 @@ function Modal({ project, onClose }) {
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3 border-t border-line pt-6">
-            <a
-              href={isTodo(project.repo) ? undefined : project.repo}
-              target="_blank"
-              rel="noreferrer"
-              aria-disabled={isTodo(project.repo)}
-              className={`rounded-md px-4 py-2 font-mono text-[13px] transition-colors ${
-                isTodo(project.repo)
-                  ? "cursor-not-allowed border border-line text-muted"
-                  : "border border-green/25 text-green hover:bg-green/10"
-              }`}
-            >
-              {isTodo(project.repo) ? "repo: TODO" : "→ GitHub repo"}
-            </a>
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-md border border-green/25 px-4 py-2 font-mono text-[13px] text-green transition-colors hover:bg-green/10"
+              >
+                → GitHub repo
+              </a>
+            )}
             {project.live && (
               <a
                 href={project.live}
