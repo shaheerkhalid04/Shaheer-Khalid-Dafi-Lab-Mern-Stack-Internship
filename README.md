@@ -29,7 +29,7 @@ Neon-green accents · blinking cursor · scroll-reveal motion · a contact form 
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-[**Live Demo**](https://your-site.vercel.app) · [**LinkedIn**](https://www.linkedin.com/in/shaheerkhalid004/) · [**Email**](mailto:shaheerkhalid1404@gmail.com)
+[**Live Demo**](https://portfolio-eta-woad-81.vercel.app) · [**LinkedIn**](https://www.linkedin.com/in/shaheerkhalid004/) · [**Email**](mailto:shaheerkhalid1404@gmail.com)
 
 </div>
 
