@@ -6,12 +6,12 @@
 ├─────────────────────────────────────────────┤
 │                                             │
 │  $ whoami                                   │
-│  Shaheer Khalid — MERN Stack Developer      │
-│  MERN Stack Intern @ DAFI Labs              │
+│  Shaheer Khalid — CS student                │
+│  AI/ML · cybersecurity                      │
 │                                             │
 │  $ cat mission.txt                          │
-│  Ship full-stack web apps & AI-powered      │
-│  tools that solve real problems.  ▌         │
+│  Build AI systems that stay grounded —      │
+│  and the security to keep them honest.  ▌   │
 │                                             │
 └─────────────────────────────────────────────┘
 ```
@@ -19,7 +19,7 @@
 # ~/shaheer — Terminal-Themed Portfolio
 
 **A single-page, dark-mode, terminal-inspired developer portfolio.**
-Neon-green accents · blinking cursor · scroll-reveal motion · a contact form that actually works.
+Neon-green + cyber-red accents · blinking cursor · scroll-reveal motion · filterable case studies · a contact form that actually works · a protected admin panel.
 
 ![Next.js](https://img.shields.io/badge/Next.js_14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -37,8 +37,10 @@ Neon-green accents · blinking cursor · scroll-reveal motion · a contact form 
 
 ## ⚡ Features
 
-- 🖥️ **Terminal aesthetic** — `$ whoami` hero, prompt-style section headers, blinking cursor, subtle grid texture
-- 🎨 **One sharp accent** — `#00ff9c` neon green on a `#0a0a0a` canvas; the green earns attention because nothing competes with it
+- 🖥️ **Terminal aesthetic** — `$ whoami` hero, prompt-style section headers, blinking cursor, scanline sweep, subtle grid texture
+- 🎨 **Dual accent system** — `#00ff9c` neon green for AI/ML work, `#ff2b4a` cyber red for security work, on a `#0a0a0a` canvas
+- 🗂️ **Filterable projects** — case studies tagged AI/ML, security, and full-stack, each opening a modal with the real engineering detail
+- 🧭 **Experience timeline** — roles on an accent-coded spine
 - 🎬 **Framer Motion everywhere** — scroll-reveal sections, hover lift on cards, smooth-scroll nav
 - 📁 **Project case-study modals** — click any project card for the problem, approach, stack, and repo link
 - ✉️ **Real contact form** — validated server-side, saved to **Supabase** via **Prisma**, email alerts via **Resend**
@@ -124,7 +126,7 @@ public/                  resume PDF goes here
 <div align="center">
 
 ```
-$ echo "built by Shaheer Khalid · MERN Stack Intern @ DAFI Labs"
+$ echo "built by Shaheer Khalid · CS student · AI/ML & cybersecurity"
 ```
 
 ⭐ If this repo helped you build your own, a star would be appreciated.

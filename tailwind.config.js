@@ -13,6 +13,8 @@ module.exports = {
         line: "#1e1e1e",
         green: "#00ff9c",
         greendim: "#7fd8b8",
+        red: "#ff2b4a",
+        reddim: "#ff7a8f",
         ink: "#f5f5f0",
         muted: "#8a8a85",
         muted2: "#b0b0aa",

@@ -10,7 +10,7 @@ export default function Footer() {
         </p>
         <p className="font-mono text-[12px] text-muted">
           built with <span className="text-green">next.js</span> · deployed on{" "}
-          <span className="text-green">vercel</span>
+          <span className="text-red">vercel</span>
         </p>
       </div>
     </footer>

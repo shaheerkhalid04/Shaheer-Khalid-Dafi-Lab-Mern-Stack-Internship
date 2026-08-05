@@ -15,11 +15,21 @@ export function Reveal({ children, delay = 0 }) {
   );
 }
 
-export function SectionLabel({ path, cmd }) {
+export function SectionLabel({ path, cmd, accent = "green" }) {
+  const accentClass = accent === "red" ? "text-red" : "text-green";
   return (
-    <p className="mb-8 font-mono text-[13px] text-muted">
-      <span className="text-muted">{path}</span>{" "}
-      <span className="text-green">$</span> {cmd}
-    </p>
+    <div className="mb-8 flex items-center gap-4">
+      <p className="font-mono text-[13px] text-muted">
+        <span className="text-muted">{path}</span>{" "}
+        <span className={accentClass}>$</span> {cmd}
+      </p>
+      <span
+        className={`h-px flex-1 ${
+          accent === "red"
+            ? "bg-gradient-to-r from-red/40 to-transparent"
+            : "bg-gradient-to-r from-green/40 to-transparent"
+        }`}
+      />
+    </div>
   );
 }

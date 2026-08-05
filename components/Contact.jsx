@@ -47,8 +47,8 @@ export default function Contact() {
           <div>
             <h2 className="text-2xl font-semibold text-ink">Let's talk.</h2>
             <p className="mt-3 text-[15px] leading-relaxed text-muted2">
-              Open to MERN stack internships and interesting projects. Drop a message
-              and I'll get back to you.
+              Open to roles and collaborations in AI/ML and security engineering —
+              or anything genuinely hard. Drop a message and I'll get back to you.
             </p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 font-mono text-[13px]">
