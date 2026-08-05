@@ -10,7 +10,7 @@ export default function Footer() {
         </p>
         <p className="font-mono text-[12px] text-muted">
           built with <span className="text-amber">next.js</span> · deployed on{" "}
-          <span className="text-ember">vercel</span>
+          <span className="text-amber">vercel</span>
         </p>
       </div>
     </footer>

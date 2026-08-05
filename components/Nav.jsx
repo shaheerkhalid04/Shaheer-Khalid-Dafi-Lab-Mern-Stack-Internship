@@ -23,7 +23,7 @@ export default function Nav() {
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="#top" className="font-mono text-sm text-amber">
           <span className="text-muted">~/</span>shaheer
-          <span className="animate-blink text-ember">_</span>
+          <span className="caret-hue animate-blink">_</span>
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">

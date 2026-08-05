@@ -24,15 +24,9 @@ export default function About() {
         <Reveal delay={0.1}>
           <div className="rounded-xl border border-line bg-panel p-5">
             <ul className="divide-y divide-line">
-              {about.facts.map((f, i) => (
+              {about.facts.map((f) => (
                 <li key={f.k} className="flex flex-col gap-1 py-3 first:pt-0 last:pb-0">
-                  <span
-                    className={`font-mono text-[12px] ${
-                      i % 2 === 1 ? "text-ember" : "text-amber"
-                    }`}
-                  >
-                    {f.k}
-                  </span>
+                  <span className="font-mono text-[12px] text-amber">{f.k}</span>
                   <span className="text-[13px] text-muted2">{f.v}</span>
                 </li>
               ))}

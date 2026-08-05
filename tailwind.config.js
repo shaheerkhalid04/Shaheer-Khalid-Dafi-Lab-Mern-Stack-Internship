@@ -14,9 +14,9 @@ module.exports = {
         line: "#2E2620",
         amber: "#FFB000",
         amberdim: "#C9A15E",
-        // Secondary accent, used to mark security work.
+        // Single-accent palette: ember red appears ONLY in the cursor gradient
+        // and its halo (see .prompt-caret / .caret-hue in globals.css).
         ember: "#FF4A3D",
-        emberdim: "#E39184",
         ink: "#E5D5C5",
         muted: "#8A7D70",
         muted2: "#B5A594",

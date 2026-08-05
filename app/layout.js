@@ -2,6 +2,7 @@ import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { profile } from "@/lib/content";
 import AmberDust from "@/components/AmberDust";
+import CursorGlow from "@/components/CursorGlow";
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={mono.variable}>
       <body className="grid-bg">
         <AmberDust />
+        <CursorGlow />
         {children}
       </body>
     </html>

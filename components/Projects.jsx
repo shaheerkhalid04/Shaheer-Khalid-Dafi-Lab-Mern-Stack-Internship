@@ -5,34 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { projects, projectFilters } from "@/lib/content";
 import { Reveal, SectionLabel } from "./Section";
 
-function Tag({ children, danger }) {
+function Tag({ children }) {
   return (
-    <span
-      className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-        danger ? "bg-[#2A1512] text-emberdim" : "bg-[#241B0C] text-amberdim"
-      }`}
-    >
+    <span className="rounded-md bg-[#241B0C] px-2.5 py-1 font-mono text-[11px] text-amberdim">
       {children}
     </span>
   );
 }
 
 function ProjectCard({ project, onOpen, index }) {
-  const danger = project.category === "security";
   return (
     <Reveal delay={index * 0.05}>
       <button
         onClick={onOpen}
-        className={`group flex h-full w-full flex-col rounded-xl border border-line bg-panel p-6 text-left transition-all duration-200 hover:-translate-y-1 ${
-          danger
-            ? "hover:border-ember/30 hover:shadow-[0_0_0_1px_rgba(255,74,61,0.15)]"
-            : "hover:border-amber/30 hover:shadow-[0_0_0_1px_rgba(255,176,0,0.15)]"
-        }`}
-        style={
-          project.featured
-            ? { borderLeft: `2px solid ${danger ? "#FF4A3D" : "#FFB000"}` }
-            : undefined
-        }
+        className="group flex h-full w-full flex-col rounded-xl border border-line bg-panel p-6 text-left transition-all duration-200 hover:-translate-y-1 hover:border-amber/30 hover:shadow-[0_0_0_1px_rgba(255,176,0,0.15)]"
+        style={project.featured ? { borderLeft: "2px solid #FFB000" } : undefined}
       >
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -41,16 +28,12 @@ function ProjectCard({ project, onOpen, index }) {
           </div>
           <div className="flex shrink-0 flex-col items-end gap-1.5">
             {project.featured && (
-              <span
-                className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-                  danger ? "bg-ember/10 text-ember" : "bg-amber/10 text-amber"
-                }`}
-              >
+              <span className="rounded-md bg-amber/10 px-2.5 py-1 font-mono text-[11px] text-amber">
                 featured
               </span>
             )}
             {project.live && (
-              <span className="font-mono text-[11px] text-ember">● live</span>
+              <span className="font-mono text-[11px] text-amber/70">● live</span>
             )}
           </div>
         </div>
@@ -61,17 +44,11 @@ function ProjectCard({ project, onOpen, index }) {
 
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((t) => (
-            <Tag key={t} danger={danger}>
-              {t}
-            </Tag>
+            <Tag key={t}>{t}</Tag>
           ))}
         </div>
 
-        <span
-          className={`mt-5 font-mono text-[13px] opacity-80 transition-opacity group-hover:opacity-100 ${
-            danger ? "text-ember" : "text-amber"
-          }`}
-        >
+        <span className="mt-5 font-mono text-[13px] text-amber opacity-80 transition-opacity group-hover:opacity-100">
           → view case study
         </span>
       </button>
@@ -80,8 +57,6 @@ function ProjectCard({ project, onOpen, index }) {
 }
 
 function Modal({ project, onClose }) {
-  const danger = project.category === "security";
-
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     document.addEventListener("keydown", onKey);
@@ -118,7 +93,7 @@ function Modal({ project, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="font-mono text-[13px] text-muted transition-colors hover:text-ember"
+            className="font-mono text-[13px] text-muted transition-colors hover:text-amber"
           >
             [esc]
           </button>
@@ -128,18 +103,14 @@ function Modal({ project, onClose }) {
           <div className="flex flex-wrap items-center gap-3">
             <h3 className="text-2xl font-semibold text-ink">{project.name}</h3>
             {project.featured && (
-              <span
-                className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-                  danger ? "bg-ember/10 text-ember" : "bg-amber/10 text-amber"
-                }`}
-              >
+              <span className="rounded-md bg-amber/10 px-2.5 py-1 font-mono text-[11px] text-amber">
                 featured
               </span>
             )}
           </div>
           <p className="mt-1 font-mono text-[13px]">
-            <span className={danger ? "text-ember" : "text-amber"}>{project.tagline}</span>{" "}
-            · <span className="text-muted">{project.context}</span>
+            <span className="text-amber">{project.tagline}</span> ·{" "}
+            <span className="text-muted">{project.context}</span>
           </p>
 
           <div className="mt-6 space-y-5">
@@ -166,9 +137,7 @@ function Modal({ project, onClose }) {
               <p className="font-mono text-[12px] text-muted">// stack</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {project.tags.map((t) => (
-                  <Tag key={t} danger={danger}>
-                    {t}
-                  </Tag>
+                  <Tag key={t}>{t}</Tag>
                 ))}
               </div>
             </div>
@@ -180,11 +149,7 @@ function Modal({ project, onClose }) {
                 href={project.repo}
                 target="_blank"
                 rel="noreferrer"
-                className={`rounded-md border px-4 py-2 font-mono text-[13px] transition-colors ${
-                  danger
-                    ? "border-ember/25 text-ember hover:bg-ember/10"
-                    : "border-amber/25 text-amber hover:bg-amber/10"
-                }`}
+                className="rounded-md border border-amber/25 px-4 py-2 font-mono text-[13px] text-amber transition-colors hover:bg-amber/10"
               >
                 → GitHub repo
               </a>
@@ -223,16 +188,13 @@ export default function Projects() {
         <div className="mb-6 flex flex-wrap gap-2">
           {projectFilters.map((f) => {
             const isActive = filter === f.id;
-            const isSecurity = f.id === "security";
             return (
               <button
                 key={f.id}
                 onClick={() => setFilter(f.id)}
                 className={`rounded-md border px-3 py-1.5 font-mono text-[12px] transition-colors ${
                   isActive
-                    ? isSecurity
-                      ? "border-ember/50 bg-ember/10 text-ember"
-                      : "border-amber/50 bg-amber/10 text-amber"
+                    ? "border-amber/50 bg-amber/10 text-amber"
                     : "border-line text-muted hover:border-muted/40 hover:text-muted2"
                 }`}
               >
