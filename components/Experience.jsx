@@ -7,44 +7,44 @@ export default function Experience() {
   return (
     <section id="experience" className="relative z-10 mx-auto max-w-5xl px-6 py-20">
       <Reveal>
-        <SectionLabel path="~/experience" cmd="ls -la roles/" accent="red" />
+        <SectionLabel path="~/experience" cmd="ls -la roles/" accent="ember" />
       </Reveal>
 
       <div className="relative">
         {/* timeline spine */}
         <span
           aria-hidden
-          className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-red/40 via-line to-green/30 md:left-[7px]"
+          className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-ember/40 via-line to-amber/30 md:left-[7px]"
         />
 
         <ol className="space-y-5">
           {experience.map((job, i) => {
-            const isRed = job.accent === "red";
+            const isEmber = job.accent === "ember";
             return (
               <li key={`${job.org}-${job.role}`} className="relative pl-8">
                 <span
                   aria-hidden
                   className={`absolute left-0 top-6 h-[15px] w-[15px] rounded-full border-2 bg-bg ${
-                    isRed ? "border-red" : "border-green"
+                    isEmber ? "border-ember" : "border-amber"
                   }`}
                 />
                 <Reveal delay={i * 0.05}>
                   <article
                     className={`rounded-xl border border-line bg-panel p-5 transition-colors duration-200 ${
-                      isRed ? "hover:border-red/30" : "hover:border-green/30"
+                      isEmber ? "hover:border-ember/30" : "hover:border-amber/30"
                     }`}
                   >
                     <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                       <h3 className="text-[16px] font-semibold text-ink">{job.role}</h3>
                       {job.period && (
-                        <span className="rounded-md border border-red/25 px-2 py-0.5 font-mono text-[11px] text-red">
+                        <span className="rounded-md border border-ember/25 px-2 py-0.5 font-mono text-[11px] text-ember">
                           {job.period}
                         </span>
                       )}
                     </div>
 
                     <p className="mt-1 font-mono text-[12px]">
-                      <span className={isRed ? "text-red" : "text-green"}>{job.org}</span>
+                      <span className={isEmber ? "text-ember" : "text-amber"}>{job.org}</span>
                       <span className="text-muted"> · {job.mode}</span>
                     </p>
 

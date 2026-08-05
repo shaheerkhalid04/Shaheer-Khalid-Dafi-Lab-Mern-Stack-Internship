@@ -83,12 +83,12 @@ function AdminLogin() {
 
   const mmss = `${Math.floor(lockedFor / 60)}:${String(lockedFor % 60).padStart(2, "0")}`;
   const inputBase =
-    "w-full rounded-md border border-line bg-panel2 px-3 py-2.5 font-mono text-[13px] text-ink placeholder:text-muted focus:border-green/40 focus:outline-none focus:ring-1 focus:ring-green/40";
+    "w-full rounded-md border border-line bg-panel2 px-3 py-2.5 font-mono text-[13px] text-ink placeholder:text-muted focus:border-amber/40 focus:outline-none focus:ring-1 focus:ring-amber/40";
 
   return (
     <main className="grid-bg relative flex min-h-screen items-center justify-center px-6">
       <div className="relative z-10 w-full max-w-sm">
-        <div className="overflow-hidden rounded-xl border border-line bg-panel shadow-[0_0_60px_-20px_rgba(0,255,156,0.15)]">
+        <div className="overflow-hidden rounded-xl border border-line bg-panel shadow-[0_0_60px_-20px_rgba(255,176,0,0.15)]">
           <div className="flex items-center gap-2 border-b border-line bg-panel2 px-4 py-2.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
             <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -97,7 +97,7 @@ function AdminLogin() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 p-6" noValidate>
-            <p className="font-mono text-[13px] text-green">$ sudo login</p>
+            <p className="font-mono text-[13px] text-amber">$ sudo login</p>
 
             <div>
               <label htmlFor="email" className="mb-1.5 block font-mono text-[12px] text-muted">
@@ -132,8 +132,8 @@ function AdminLogin() {
             </div>
 
             {lockedFor > 0 ? (
-              <div className="rounded-md border border-[#ff6b6b]/30 bg-[#ff6b6b]/5 px-3 py-2.5">
-                <p className="font-mono text-[12px] text-[#ff6b6b]">
+              <div className="rounded-md border border-[#FF6B5A]/30 bg-[#FF6B5A]/5 px-3 py-2.5">
+                <p className="font-mono text-[12px] text-[#FF6B5A]">
                   ✗ too many attempts — locked
                 </p>
                 <p className="mt-1 font-mono text-[12px] text-muted">
@@ -142,7 +142,7 @@ function AdminLogin() {
               </div>
             ) : (
               error && (
-                <p className="font-mono text-[12px] text-[#ff6b6b]">
+                <p className="font-mono text-[12px] text-[#FF6B5A]">
                   ✗ {error}
                   {typeof attemptsRemaining === "number" && attemptsRemaining > 0 && (
                     <span className="text-muted"> · {attemptsRemaining} attempt{attemptsRemaining === 1 ? "" : "s"} left</span>
@@ -154,7 +154,7 @@ function AdminLogin() {
             <button
               type="submit"
               disabled={status === "sending" || lockedFor > 0}
-              className="w-full rounded-md bg-green px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-md bg-amber px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {lockedFor > 0 ? `locked — ${mmss}` : status === "sending" ? "authenticating…" : "→ log in"}
             </button>
@@ -171,7 +171,7 @@ function AdminLogin() {
         </div>
 
         <p className="mt-4 text-center font-mono text-[12px] text-muted">
-          <a href="/" className="hover:text-green">← back to site</a>
+          <a href="/" className="hover:text-amber">← back to site</a>
         </p>
       </div>
     </main>

@@ -34,7 +34,7 @@ export default function Contact() {
   }
 
   const inputBase =
-    "w-full rounded-md border border-line bg-panel2 px-3 py-2.5 font-mono text-[13px] text-ink placeholder:text-muted focus:border-green/40 focus:outline-none focus:ring-1 focus:ring-green/40";
+    "w-full rounded-md border border-line bg-panel2 px-3 py-2.5 font-mono text-[13px] text-ink placeholder:text-muted focus:border-amber/40 focus:outline-none focus:ring-1 focus:ring-amber/40";
 
   return (
     <section id="contact" className="relative z-10 mx-auto max-w-5xl px-6 py-20 pb-28">
@@ -52,20 +52,20 @@ export default function Contact() {
             </p>
             <ul className="mt-6 space-y-3">
               <li className="flex items-center gap-3 font-mono text-[13px]">
-                <span className="text-green">email</span>
-                <a href={`mailto:${profile.email}`} className="text-muted2 hover:text-green">
+                <span className="text-amber">email</span>
+                <a href={`mailto:${profile.email}`} className="text-muted2 hover:text-amber">
                   {profile.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 font-mono text-[13px]">
-                <span className="text-green">github</span>
-                <a href={profile.github} target="_blank" rel="noreferrer" className="text-muted2 hover:text-green">
+                <span className="text-amber">github</span>
+                <a href={profile.github} target="_blank" rel="noreferrer" className="text-muted2 hover:text-amber">
                   /shaheerkhalid04
                 </a>
               </li>
               <li className="flex items-center gap-3 font-mono text-[13px]">
-                <span className="text-green">linkedin</span>
-                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-muted2 hover:text-green">
+                <span className="text-amber">linkedin</span>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-muted2 hover:text-amber">
                   /shaheerkhalid004
                 </a>
               </li>
@@ -77,14 +77,14 @@ export default function Contact() {
           <div className="rounded-xl border border-line bg-panel p-6">
             {status === "ok" ? (
               <div className="flex min-h-[280px] flex-col items-center justify-center text-center">
-                <p className="font-mono text-2xl text-green">✓</p>
+                <p className="font-mono text-2xl text-amber">✓</p>
                 <p className="mt-3 text-[15px] text-ink">Message sent.</p>
                 <p className="mt-1 text-[13px] text-muted">
                   Thanks — I'll reply to your email soon.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-5 font-mono text-[13px] text-green hover:underline"
+                  className="mt-5 font-mono text-[13px] text-amber hover:underline"
                 >
                   ← send another
                 </button>
@@ -152,7 +152,7 @@ export default function Contact() {
                 </div>
 
                 {status === "error" && (
-                  <p className="font-mono text-[12px] text-[#ff6b6b]">
+                  <p className="font-mono text-[12px] text-[#FF6B5A]">
                     {error || "Couldn't send. Try again."}
                   </p>
                 )}
@@ -160,7 +160,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full rounded-md bg-green px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="w-full rounded-md bg-amber px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === "sending" ? "sending…" : "→ send message"}
                 </button>

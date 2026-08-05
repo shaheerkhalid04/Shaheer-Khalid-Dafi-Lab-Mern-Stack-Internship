@@ -21,9 +21,9 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-mono text-sm text-green">
+        <a href="#top" className="font-mono text-sm text-amber">
           <span className="text-muted">~/</span>shaheer
-          <span className="animate-blink text-red">_</span>
+          <span className="animate-blink text-ember">_</span>
         </a>
 
         <ul className="hidden items-center gap-7 md:flex">
@@ -31,7 +31,7 @@ export default function Nav() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="font-mono text-[13px] text-muted transition-colors hover:text-green"
+                className="font-mono text-[13px] text-muted transition-colors hover:text-amber"
               >
                 {item.label}
               </a>
@@ -40,7 +40,7 @@ export default function Nav() {
           <li>
             <a
               href={profile.resume}
-              className="rounded-md bg-green px-3 py-1.5 font-mono text-[12px] font-medium text-bg transition-opacity hover:opacity-90"
+              className="rounded-md bg-amber px-3 py-1.5 font-mono text-[12px] font-medium text-bg transition-opacity hover:opacity-90"
             >
               resume.pdf
             </a>
@@ -50,7 +50,7 @@ export default function Nav() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((o) => !o)}
-          className="font-mono text-green md:hidden"
+          className="font-mono text-amber md:hidden"
         >
           {open ? "[x]" : "[≡]"}
         </button>
@@ -63,7 +63,7 @@ export default function Nav() {
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 font-mono text-sm text-muted hover:text-green"
+                className="block py-2 font-mono text-sm text-muted hover:text-amber"
               >
                 {item.label}
               </a>
@@ -72,7 +72,7 @@ export default function Nav() {
           <li>
             <a
               href={profile.resume}
-              className="mt-1 inline-block rounded-md bg-green px-3 py-1.5 font-mono text-[12px] font-medium text-bg"
+              className="mt-1 inline-block rounded-md bg-amber px-3 py-1.5 font-mono text-[12px] font-medium text-bg"
             >
               resume.pdf
             </a>

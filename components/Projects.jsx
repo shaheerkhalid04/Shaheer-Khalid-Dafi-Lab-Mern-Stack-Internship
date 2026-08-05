@@ -9,7 +9,7 @@ function Tag({ children, danger }) {
   return (
     <span
       className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-        danger ? "bg-[#1a0f12] text-reddim" : "bg-[#0f1a15] text-greendim"
+        danger ? "bg-[#2A1512] text-emberdim" : "bg-[#241B0C] text-amberdim"
       }`}
     >
       {children}
@@ -25,12 +25,12 @@ function ProjectCard({ project, onOpen, index }) {
         onClick={onOpen}
         className={`group flex h-full w-full flex-col rounded-xl border border-line bg-panel p-6 text-left transition-all duration-200 hover:-translate-y-1 ${
           danger
-            ? "hover:border-red/30 hover:shadow-[0_0_0_1px_rgba(255,43,74,0.15)]"
-            : "hover:border-green/30 hover:shadow-[0_0_0_1px_rgba(0,255,156,0.15)]"
+            ? "hover:border-ember/30 hover:shadow-[0_0_0_1px_rgba(255,74,61,0.15)]"
+            : "hover:border-amber/30 hover:shadow-[0_0_0_1px_rgba(255,176,0,0.15)]"
         }`}
         style={
           project.featured
-            ? { borderLeft: `2px solid ${danger ? "#ff2b4a" : "#00ff9c"}` }
+            ? { borderLeft: `2px solid ${danger ? "#FF4A3D" : "#FFB000"}` }
             : undefined
         }
       >
@@ -43,14 +43,14 @@ function ProjectCard({ project, onOpen, index }) {
             {project.featured && (
               <span
                 className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-                  danger ? "bg-red/10 text-red" : "bg-green/10 text-green"
+                  danger ? "bg-ember/10 text-ember" : "bg-amber/10 text-amber"
                 }`}
               >
                 featured
               </span>
             )}
             {project.live && (
-              <span className="font-mono text-[11px] text-red">● live</span>
+              <span className="font-mono text-[11px] text-ember">● live</span>
             )}
           </div>
         </div>
@@ -69,7 +69,7 @@ function ProjectCard({ project, onOpen, index }) {
 
         <span
           className={`mt-5 font-mono text-[13px] opacity-80 transition-opacity group-hover:opacity-100 ${
-            danger ? "text-red" : "text-green"
+            danger ? "text-ember" : "text-amber"
           }`}
         >
           → view case study
@@ -108,7 +108,7 @@ function Modal({ project, onClose }) {
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-2xl overflow-hidden rounded-xl border border-line bg-panel"
       >
-        <div className="flex items-center gap-2 border-b border-line bg-[#111] px-4 py-2.5">
+        <div className="flex items-center gap-2 border-b border-line bg-[#1A1613] px-4 py-2.5">
           <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
           <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
           <span className="h-3 w-3 rounded-full bg-[#27c93f]" />
@@ -118,7 +118,7 @@ function Modal({ project, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close"
-            className="font-mono text-[13px] text-muted transition-colors hover:text-red"
+            className="font-mono text-[13px] text-muted transition-colors hover:text-ember"
           >
             [esc]
           </button>
@@ -130,7 +130,7 @@ function Modal({ project, onClose }) {
             {project.featured && (
               <span
                 className={`rounded-md px-2.5 py-1 font-mono text-[11px] ${
-                  danger ? "bg-red/10 text-red" : "bg-green/10 text-green"
+                  danger ? "bg-ember/10 text-ember" : "bg-amber/10 text-amber"
                 }`}
               >
                 featured
@@ -138,7 +138,7 @@ function Modal({ project, onClose }) {
             )}
           </div>
           <p className="mt-1 font-mono text-[13px]">
-            <span className={danger ? "text-red" : "text-green"}>{project.tagline}</span>{" "}
+            <span className={danger ? "text-ember" : "text-amber"}>{project.tagline}</span>{" "}
             · <span className="text-muted">{project.context}</span>
           </p>
 
@@ -182,8 +182,8 @@ function Modal({ project, onClose }) {
                 rel="noreferrer"
                 className={`rounded-md border px-4 py-2 font-mono text-[13px] transition-colors ${
                   danger
-                    ? "border-red/25 text-red hover:bg-red/10"
-                    : "border-green/25 text-green hover:bg-green/10"
+                    ? "border-ember/25 text-ember hover:bg-ember/10"
+                    : "border-amber/25 text-amber hover:bg-amber/10"
                 }`}
               >
                 → GitHub repo
@@ -194,7 +194,7 @@ function Modal({ project, onClose }) {
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md bg-green px-4 py-2 font-mono text-[13px] font-medium text-bg hover:opacity-90"
+                className="rounded-md bg-amber px-4 py-2 font-mono text-[13px] font-medium text-bg hover:opacity-90"
               >
                 ↗ live demo
               </a>
@@ -231,8 +231,8 @@ export default function Projects() {
                 className={`rounded-md border px-3 py-1.5 font-mono text-[12px] transition-colors ${
                   isActive
                     ? isSecurity
-                      ? "border-red/50 bg-red/10 text-red"
-                      : "border-green/50 bg-green/10 text-green"
+                      ? "border-ember/50 bg-ember/10 text-ember"
+                      : "border-amber/50 bg-amber/10 text-amber"
                     : "border-line text-muted hover:border-muted/40 hover:text-muted2"
                 }`}
               >

@@ -9,8 +9,8 @@ export default function Footer() {
           © {year} {profile.name}
         </p>
         <p className="font-mono text-[12px] text-muted">
-          built with <span className="text-green">next.js</span> · deployed on{" "}
-          <span className="text-red">vercel</span>
+          built with <span className="text-amber">next.js</span> · deployed on{" "}
+          <span className="text-ember">vercel</span>
         </p>
       </div>
     </footer>

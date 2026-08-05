@@ -1,6 +1,7 @@
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import { profile } from "@/lib/content";
+import AmberDust from "@/components/AmberDust";
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
@@ -17,14 +18,17 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%2300ff9c'>&gt;</text></svg>",
+    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23FFB000'>&gt;</text></svg>",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={mono.variable}>
-      <body className="grid-bg">{children}</body>
+      <body className="grid-bg">
+        <AmberDust />
+        {children}
+      </body>
     </html>
   );
 }

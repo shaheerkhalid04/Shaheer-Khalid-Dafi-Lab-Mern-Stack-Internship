@@ -28,7 +28,7 @@ export default async function AdminDashboard() {
 
   return (
     <AdminShell email={session?.email} path="~/admin">
-      <p className="font-mono text-[13px] text-green">$ ./dashboard --stats</p>
+      <p className="font-mono text-[13px] text-amber">$ ./dashboard --stats</p>
 
       <div className="mt-5 grid gap-4 sm:grid-cols-3">
         {stats.map((s) => (
@@ -58,7 +58,7 @@ export default async function AdminDashboard() {
 
       <Link
         href="/admin/contacts"
-        className="mt-6 inline-block rounded-md bg-green px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90"
+        className="mt-6 inline-block rounded-md bg-amber px-4 py-2.5 font-mono text-[13px] font-medium text-bg transition-opacity hover:opacity-90"
       >
         → view all messages
       </Link>

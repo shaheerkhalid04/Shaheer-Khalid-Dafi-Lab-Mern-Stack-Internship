@@ -7,17 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "#0a0a0a",
-        panel: "#101010",
-        panel2: "#141414",
-        line: "#1e1e1e",
-        green: "#00ff9c",
-        greendim: "#7fd8b8",
-        red: "#ff2b4a",
-        reddim: "#ff7a8f",
-        ink: "#f5f5f0",
-        muted: "#8a8a85",
-        muted2: "#b0b0aa",
+        // Warm retro CRT palette — amber gold on warm charcoal.
+        bg: "#120F0D",
+        panel: "#1A1613",
+        panel2: "#221C18",
+        line: "#2E2620",
+        amber: "#FFB000",
+        amberdim: "#C9A15E",
+        // Secondary accent, used to mark security work.
+        ember: "#FF4A3D",
+        emberdim: "#E39184",
+        ink: "#E5D5C5",
+        muted: "#8A7D70",
+        muted2: "#B5A594",
       },
       fontFamily: {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],

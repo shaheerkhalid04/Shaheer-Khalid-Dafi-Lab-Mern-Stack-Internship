@@ -25,7 +25,7 @@ export default async function ContactsPage({ searchParams }) {
   return (
     <AdminShell email={session?.email} path="~/admin/messages">
       <div className="flex items-baseline justify-between">
-        <p className="font-mono text-[13px] text-green">$ cat messages.db</p>
+        <p className="font-mono text-[13px] text-amber">$ cat messages.db</p>
         <p className="font-mono text-[12px] text-muted">{total} total</p>
       </div>
 
@@ -41,7 +41,7 @@ export default async function ContactsPage({ searchParams }) {
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <p className="text-[15px] font-medium text-ink">
                 {c.name}{" "}
-                <a href={`mailto:${c.email}`} className="font-mono text-[12px] text-green hover:underline">
+                <a href={`mailto:${c.email}`} className="font-mono text-[12px] text-amber hover:underline">
                   &lt;{c.email}&gt;
                 </a>
               </p>
@@ -60,13 +60,13 @@ export default async function ContactsPage({ searchParams }) {
       {pages > 1 && (
         <nav className="mt-6 flex items-center justify-center gap-4 font-mono text-[13px]">
           {page > 1 ? (
-            <a href={`/admin/contacts?page=${page - 1}`} className="text-green hover:underline">← prev</a>
+            <a href={`/admin/contacts?page=${page - 1}`} className="text-amber hover:underline">← prev</a>
           ) : (
             <span className="text-line">← prev</span>
           )}
           <span className="text-muted">page {page} / {pages}</span>
           {page < pages ? (
-            <a href={`/admin/contacts?page=${page + 1}`} className="text-green hover:underline">next →</a>
+            <a href={`/admin/contacts?page=${page + 1}`} className="text-amber hover:underline">next →</a>
           ) : (
             <span className="text-line">next →</span>
           )}

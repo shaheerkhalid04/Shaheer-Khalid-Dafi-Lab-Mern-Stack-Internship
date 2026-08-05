@@ -28,7 +28,7 @@ export default function About() {
                 <li key={f.k} className="flex flex-col gap-1 py-3 first:pt-0 last:pb-0">
                   <span
                     className={`font-mono text-[12px] ${
-                      i % 2 === 1 ? "text-red" : "text-green"
+                      i % 2 === 1 ? "text-ember" : "text-amber"
                     }`}
                   >
                     {f.k}
