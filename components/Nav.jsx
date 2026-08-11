@@ -2,17 +2,22 @@
 
 import { useEffect, useState } from "react";
 import { nav, profile } from "@/lib/content";
+import { OPEN_PALETTE_EVENT } from "./CommandPalette";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hotkey, setHotkey] = useState("Ctrl K");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    if (/mac|iphone|ipad/i.test(navigator.platform || navigator.userAgent)) setHotkey("⌘K");
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const openPalette = () => window.dispatchEvent(new Event(OPEN_PALETTE_EVENT));
 
   return (
     <header
@@ -38,6 +43,15 @@ export default function Nav() {
             </li>
           ))}
           <li>
+            <button
+              onClick={openPalette}
+              aria-label="Open command palette"
+              className="cursor-pointer rounded-md border border-line px-2.5 py-1.5 font-mono text-[11px] text-muted transition-colors hover:border-amber/40 hover:text-amber"
+            >
+              {hotkey}
+            </button>
+          </li>
+          <li>
             <a
               href={profile.resume}
               className="rounded-md bg-amber px-3 py-1.5 font-mono text-[12px] font-medium text-bg transition-opacity hover:opacity-90"
@@ -49,8 +63,9 @@ export default function Nav() {
 
         <button
           aria-label="Toggle menu"
+          aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="font-mono text-amber md:hidden"
+          className="cursor-pointer font-mono text-amber md:hidden"
         >
           {open ? "[x]" : "[≡]"}
         </button>

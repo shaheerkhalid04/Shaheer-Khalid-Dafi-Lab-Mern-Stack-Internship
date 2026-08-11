@@ -14,11 +14,14 @@ function Tag({ children }) {
 }
 
 function ProjectCard({ project, onOpen, index }) {
+  // Diagonal wave across the 2-column grid rather than a flat sequential delay.
+  const wave = (Math.floor(index / 2) + (index % 2)) * 0.06;
   return (
-    <Reveal delay={index * 0.05}>
+    <Reveal delay={wave}>
       <button
         onClick={onOpen}
-        className="group flex h-full w-full flex-col rounded-xl border border-line bg-panel p-6 text-left transition-all duration-200 hover:-translate-y-1 hover:border-amber/30 hover:shadow-[0_0_0_1px_rgba(255,176,0,0.15)]"
+        aria-label={`View case study: ${project.name}`}
+        className="group flex h-full w-full cursor-pointer flex-col rounded-xl border border-line bg-panel p-6 text-left transition-all duration-200 hover:-translate-y-1 hover:border-amber/30 hover:shadow-[0_0_0_1px_rgba(255,176,0,0.15)]"
         style={project.featured ? { borderLeft: "2px solid #FFB000" } : undefined}
       >
         <div className="flex items-start justify-between gap-3">
@@ -192,7 +195,7 @@ export default function Projects() {
               <button
                 key={f.id}
                 onClick={() => setFilter(f.id)}
-                className={`rounded-md border px-3 py-1.5 font-mono text-[12px] transition-colors ${
+                className={`cursor-pointer rounded-md border px-3 py-1.5 font-mono text-[12px] transition-colors ${
                   isActive
                     ? "border-amber/50 bg-amber/10 text-amber"
                     : "border-line text-muted hover:border-muted/40 hover:text-muted2"
