@@ -7,7 +7,7 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
-import BootSequence from "@/components/BootSequence";
+import Intro from "@/components/Intro";
 import StatusBar from "@/components/StatusBar";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
       >
         skip to content
       </a>
-      <BootSequence />
+      <Intro />
       <Nav />
       <CommandPalette />
       <StatusBar />

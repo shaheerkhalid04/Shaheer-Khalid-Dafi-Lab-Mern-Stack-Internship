@@ -3,11 +3,18 @@
 import { useEffect, useState } from "react";
 import { nav, profile } from "@/lib/content";
 import { OPEN_PALETTE_EVENT } from "./CommandPalette";
+import { isSoundEnabled, onSoundChange, toggleSound } from "@/lib/sound";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [hotkey, setHotkey] = useState("Ctrl K");
+  const [sound, setSound] = useState(false);
+
+  useEffect(() => {
+    setSound(isSoundEnabled());
+    return onSoundChange(setSound);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -42,6 +49,21 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          <li>
+            <button
+              onClick={() => toggleSound()}
+              aria-label={sound ? "Mute ambient sound" : "Unmute ambient sound"}
+              aria-pressed={sound}
+              title={sound ? "sound on" : "sound off"}
+              className={`cursor-pointer rounded-md border px-2.5 py-1.5 font-mono text-[11px] transition-colors ${
+                sound
+                  ? "border-amber/40 text-amber"
+                  : "border-line text-muted hover:border-amber/40 hover:text-amber"
+              }`}
+            >
+              {sound ? "♪ on" : "♪ off"}
+            </button>
+          </li>
           <li>
             <button
               onClick={openPalette}
