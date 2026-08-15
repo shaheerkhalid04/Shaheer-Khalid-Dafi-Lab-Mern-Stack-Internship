@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { profile } from "@/lib/content";
+import ScrambleText from "./ScrambleText";
 
 const socials = [
   { label: "GitHub", href: profile.github },
@@ -15,12 +16,14 @@ export default function Hero() {
       id="top"
       className="hero-glow relative z-10 mx-auto max-w-5xl px-6 pt-36 pb-24 md:pt-44"
     >
+      {/* Wrapper carries the corner brackets — the card itself clips overflow. */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="scanline overflow-hidden rounded-xl border border-line bg-panel shadow-[0_0_90px_-40px_rgba(255,176,0,0.5)]"
+        className="bracket-frame"
       >
+        <div className="scanline overflow-hidden rounded-xl border border-line bg-panel shadow-[0_0_90px_-40px_rgba(255,176,0,0.5)]">
         <div className="flex items-center gap-2 border-b border-line bg-[#1A1613] px-4 py-2.5">
           <span className="h-3 w-3 rounded-full bg-[#ff5f56]" />
           <span className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
@@ -39,8 +42,7 @@ export default function Hero() {
             {profile.name}
           </h1>
           <p className="prompt-caret mt-3 font-mono text-base text-amber md:text-lg">
-            CS student <span className="text-muted">·</span> AI/ML{" "}
-            <span className="text-muted">·</span> cybersecurity
+            <ScrambleText text="CS student · AI/ML · cybersecurity" />
           </p>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted md:text-base">
             {profile.tagline}
@@ -65,6 +67,7 @@ export default function Hero() {
               </a>
             ))}
           </div>
+        </div>
         </div>
       </motion.div>
     </section>

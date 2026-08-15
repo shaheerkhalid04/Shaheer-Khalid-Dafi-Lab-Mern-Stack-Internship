@@ -74,6 +74,38 @@ body {
   filter: blur(26px);
 }
 
+/* corner brackets framing a panel — four L-marks, no full border */
+.bracket-frame {
+  position: relative;
+}
+.bracket-frame::before,
+.bracket-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: rgba(255, 176, 0, 0.55);
+}
+.bracket-frame::before {
+  top: -6px;
+  left: -6px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.bracket-frame::after {
+  bottom: -6px;
+  right: -6px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* vertical edge label */
+.edge-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
 /* scanline sweep across terminal chrome */
 .scanline {
   position: relative;
